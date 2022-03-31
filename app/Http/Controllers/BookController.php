@@ -8,31 +8,10 @@ use App\Models\Book;
 class BookController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * Display the Book resource by volumeId.
      *
-     * @return \Illuminate\Http\Response
-     */
-    public function allBooks()
-    {
-        return BookResource::collection(Book::all());
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\Book  $book
-     * @return \Illuminate\Http\Response
-     */
-    public function bookById($id)
-    {
-        return new BookResource(Book::findOrFail($id));
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\Book  $book
-     * @return \Illuminate\Http\Response
+     * @param  $id
+     * @return App\Http\Resources\BookResource
      */
     public function booksByVolumeId($id)
     {

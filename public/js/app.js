@@ -4273,8 +4273,11 @@ function _iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeof Sy
 
 function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
+// Home Page component. Uses Inertia to pull data from the Laravel backend
 
 
+ // Function Home - main functino for displaying the homepage
+// @Param: books - provided by Inertia from the Laravel backend before page creation.
 
 
 
@@ -4282,6 +4285,7 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 function Home(_ref) {
   var books = _ref.books;
 
+  // Setup some state for the select fields
   var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)([]),
       _useState2 = _slicedToArray(_useState, 2),
       chapters = _useState2[0],
@@ -4297,72 +4301,76 @@ function Home(_ref) {
       verse = _useState6[0],
       setVerse = _useState6[1];
 
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
-    className: "App",
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
-      className: "container",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
-        className: "row",
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
-          className: "twelve columns",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("h3", {
-            children: "Laravel/Inertia API Example"
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("p", {
-            children: "This example uses Laravel with a SQLite DB on the backend with a React frontend. Normally with React I'd need a separate API told hold the data but in this case Inertia acts as a bridge between the backend and frontend. No need to build out an entire separate API to get a dynamic React front end. Just use the backend I already have in place!"
-          })]
-        })
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
-        className: "row",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
-          className: "one-third column",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("label", {
-            htmlFor: "book",
-            children: "Book"
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(BookSelect, {
-            books: books,
-            setChapters: setChapters,
-            setVerses: setVerses
-          })]
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.Fragment, {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.Head, {
+      title: "Laravel/Inertial API Example"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+      className: "App",
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+        className: "container",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+          className: "row",
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+            className: "twelve columns",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("h3", {
+              children: "Laravel/Inertia API Example"
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("p", {
+              children: "This example uses Laravel with a SQLite DB on the backend with a React frontend. Normally with React I'd need a separate API told hold the data but in this case Inertia acts as a bridge between the backend and frontend. No need to build out an entire separate API to get a dynamic React front end. Just use the backend I already have in place!"
+            })]
+          })
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
-          className: "one-third column",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("label", {
-            htmlFor: "chapter",
-            children: "Chapter"
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(ChapterSelect, {
-            chapters: chapters,
-            setVerses: setVerses
+          className: "row",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+            className: "one-third column",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("label", {
+              htmlFor: "book",
+              children: "Book"
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(BookSelect, {
+              books: books,
+              setChapters: setChapters,
+              setVerses: setVerses
+            })]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+            className: "one-third column",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("label", {
+              htmlFor: "chapter",
+              children: "Chapter"
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(ChapterSelect, {
+              chapters: chapters,
+              setVerses: setVerses
+            })]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+            className: "one-third column",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("label", {
+              htmlFor: "verse",
+              children: "Verse"
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(VerseSelect, {
+              verses: verses,
+              setVerse: setVerse
+            })]
           })]
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
-          className: "one-third column",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("label", {
-            htmlFor: "verse",
-            children: "Verse"
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(VerseSelect, {
-            verses: verses,
-            setVerse: setVerse
-          })]
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+          className: "row",
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+            className: "twelve columns",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("h5", {
+              className: "search-result",
+              children: "Search Result"
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(VerseDisplay, {
+              verse: verse
+            })]
+          })
         })]
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
-        className: "row",
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
-          className: "twelve columns",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("h5", {
-            className: "search-result",
-            children: "Search Result"
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(VerseDisplay, {
-            verse: verse
-          })]
-        })
-      })]
-    })
+      })
+    })]
   });
 } // TODO: Need to setup state to hold the returned axios request.
 // TODO: Need to make calls to the api for each select.
 // TODO: Need to print the select options if te state data exists
 // Function: BookSelect
-// @Param: data - the initial book data retrieved upon page load.
-// @Param: onChangeHandler - the change handler created from
-// Apollo's useLazyQuery (getChapters)
+// @Param: books - the initial book data passed from Inertia
+// @Param: setChapters - so we can update the chapters select
+// @Param: setVerses - so we can reset the verses select when the user picks a book
 // This component displays the Book Select form input
 
 var BookSelect = function BookSelect(_ref2) {
@@ -4392,11 +4400,9 @@ var BookSelect = function BookSelect(_ref2) {
       }, book.id);
     }))]
   });
-}; // Function: const ChapterSelect = ({ chaptersResults, onChangeHandler }) => {
-// @Param: chaptersResults - the chapter results retrieved after selecting from the
-// books select.
-// @Param: onChangeHandler - the change handler created from
-// Apollo's useLazyQuery (getVerses)
+}; // Function: ChapterSelect
+// @Param: chapters - chapters data retrieve in the background from Laravel
+// @Param: setVerses - so we can update the verses select
 // This component displays the Chapters Select form input
 
 
@@ -4421,11 +4427,9 @@ var ChapterSelect = function ChapterSelect(_ref3) {
       }, chapter.id);
     }))]
   });
-}; // Function: const VerseSelect = ({ versesResults, onChangeHandler }) => {
-// @Param: versesResults - the verses results retrieved after selecting from the
-// verses select.
-// @Param: onChangeHandler - the change handler created from
-// Apollo's useLazyQuery (getVerseById)
+}; // Function: VerseSelect
+// @Param: verses - verses data retrieve in the background from Laravel
+// @Param: setVerse - so we can update the verse on the page
 // This component displays the Verse Select form input
 
 
@@ -4449,8 +4453,8 @@ var VerseSelect = function VerseSelect(_ref4) {
       }, verse.id);
     }))]
   });
-}; // Function: const VerseDisplay = ({ verseByIdResults }) => {
-// @Param: verseByIdResults - the individual verseId
+}; // Function: VerseDisplay
+// @Param: verse - the verse to display
 // This component displays the actual verse selected
 
 

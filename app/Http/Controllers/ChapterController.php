@@ -8,9 +8,10 @@ use App\Models\Chapter;
 class ChapterController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * Display a listing of chapters.
      *
-     * @return \Illuminate\Http\Response
+     * @param  $id
+     * @return App\Http\Resources\ChapterResource
      */
     public function chaptersByBookId($id)
     {

@@ -9,9 +9,10 @@ use App\Models\Verse;
 class VerseController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * Display a listing of verses by chapterId.
      *
-     * @return \Illuminate\Http\Response
+     * @param  $id
+     * @return App\Http\Resources\VersesResource
      */
     public function versesByChapterId($id)
     {
@@ -21,9 +22,10 @@ class VerseController extends Controller
     }
 
     /**
-     * Display a listing of the resource.
+     * Display a single verse.
      *
-     * @return \Illuminate\Http\Response
+     * @param  $id
+     * @return App\Http\Resources\VerseResource
      */
     public function verseById($id)
     {

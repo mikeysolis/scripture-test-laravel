@@ -1,0 +1,11 @@
+/* @import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities'; */
+
+@import "normalize.css";
+@import "skeleton.css";
+
+.container,
+.search-result {
+    margin-top: 5rem;
+}
